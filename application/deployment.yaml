@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yigitfdeployment
+  namespace: default
+  labels:
+    app: yigitfapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yigitfapp
+  template:
+    metadata:
+      labels:
+        app: yigitfapp
+    spec:
+      containers:
+      - name: yigitfcontainer
+        image: yigitfa/sample-node:1.0.6
+        ports:
+        - containerPort: 3051
+        envFrom:
+        - configMapRef:
+            name: configmap1
+        resources:
+          requests:
+            memory: "16Mi" 
+            cpu: "50m"    # 500milliCPUs (1/2 CPU)
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
