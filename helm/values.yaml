@@ -1,8 +1,8 @@
 appName: sample-node-app
-configmap:
-  name: sample-configmap
 image: yigitfa/sample-node:1.0.6
-secrets:
-  name: secret-dev
 environment: development
 replicas: 3
+configmap:
+  name: sample-configmap
+secrets:
+  name: secret-dev
