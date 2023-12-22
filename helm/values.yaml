@@ -6,4 +6,3 @@ secrets:
   name: secret-dev
 environment: development
 replicas: 3
-port: '3051'
