@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: yigitfdeployment
-  namespace: default
+  name: nodeapp
   labels:
-    app: yigitfapp
+    app: nodeapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: yigitfapp
+      app: nodeapp
   template:
     metadata:
       labels:
-        app: yigitfapp
+        app: nodeapp
     spec:
+      serviceAccountName: vault
       containers:
       - name: yigitfcontainer
         image: yigitfa/sample-node:1.0.6
