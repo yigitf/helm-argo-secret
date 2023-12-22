@@ -1,14 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: asdasd
+  name: denemeapp
 spec:
   destination:
-    name: ''
     namespace: deneme
     server: 'https://kubernetes.default.svc'
   source:
-    path: ''
     repoURL: 'https://github.com/yigitf/helm-argo-secret.git'
     targetRevision: v2
     chart: helm01
