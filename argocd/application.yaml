@@ -4,11 +4,13 @@ metadata:
   name: denemeapp
 spec:
   destination:
-    namespace: deneme
+    name: ''
+    namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    repoURL: 'https://github.com/yigitf/helm-argo-secret.git'
-    targetRevision: v2
+    path: ''
+    repoURL: 'https://github.com/yigitf/nodeapp.git'
+    targetRevision: "1.16.0"
     chart: helm01
   sources: []
   project: default
@@ -18,3 +20,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
