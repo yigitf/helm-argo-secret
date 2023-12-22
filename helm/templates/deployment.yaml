@@ -23,7 +23,7 @@ spec:
         - configMapRef:
             name: {{ .Values.configmap.name}}
         envFrom:
-        - secretReft:
+        - secretRef:
             name: {{ .Values.secrets.name}}
         resources:
           requests:
